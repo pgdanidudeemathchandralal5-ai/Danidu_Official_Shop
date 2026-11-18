@@ -348,7 +348,7 @@ function renderCatalog() {
                 <div class="item-subtitle">${item.subtitle}</div>
                 <p class="item-desc">${item.desc}</p>
             </div>
-            <button class="add-btn" onclick="addToList(${item.id})">
+            <button class="add-btn" onclick="addToList(${item.id}, this)">
                 <i class="fa-solid fa-plus"></i> ලැයිස්තුවට එක් කරන්න
             </button>
         `;
@@ -356,8 +356,8 @@ function renderCatalog() {
     });
 }
 
-// ලැයිස්තුවට එක් කිරීම
-function addToList(id) {
+// ලැයිස්තුවට එක් කිරීම (Visual Feedback සහ Toast පණිවිඩය සමඟ)
+function addToList(id, btnElement) {
     const item = catalogItems.find(i => i.id === id);
     if (!item) return;
 
@@ -368,6 +368,39 @@ function addToList(id) {
         selectedList.push({ ...item, qty: 1 });
     }
     updateCartUI();
+
+    // බටන් එකේ පෙනුම තාවකාලිකව කොළ පාටට වෙනස් කිරීම
+    if (btnElement) {
+        const originalHTML = btnElement.innerHTML;
+        btnElement.classList.add("added");
+        btnElement.innerHTML = `<i class="fa-solid fa-check"></i> ලැයිස්තුවට එක් විය!`;
+        setTimeout(() => {
+            btnElement.classList.remove("added");
+            btnElement.innerHTML = originalHTML;
+        }, 1200);
+    }
+
+    // තිරයේ පහළින් පණිවිඩයක් පෙන්වීම
+    showToast(`"${item.name}" ලැයිස්තුවට එක් කරන ලදී!`);
+}
+
+// තිරයේ පහළින් මතුවන පණිවිඩය (Toast Notification)
+function showToast(message) {
+    let toast = document.getElementById("toastBox");
+    if (!toast) {
+        toast = document.createElement("div");
+        toast.id = "toastBox";
+        toast.className = "toast-notification";
+        toast.onclick = () => cartModal.classList.add("open");
+        document.body.appendChild(toast);
+    }
+    toast.innerHTML = `<i class="fa-solid fa-circle-check"></i> <span>${message}</span> <u>ලැයිස්තුව බලන්න</u>`;
+    toast.classList.add("show");
+
+    clearTimeout(window.toastTimer);
+    window.toastTimer = setTimeout(() => {
+        toast.classList.remove("show");
+    }, 3000);
 }
 
 // ප්‍රමාණය (+ / -) වෙනස් කිරීම
