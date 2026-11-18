@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="si">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Danidu Official | Your Trusted Tech & Digital Partner</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Sinhala:wght@400;600;700;800&family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <!-- Flask සහ Live Server දෙකටම වැඩ කරන පරිදි CSS සම්බන්ධ කර ඇත -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" onerror="this.onerror=null;this.href='../static/style.css';">
+</head>
+<body>
+
+    <!-- Top Contact Bar -->
+    <div class="top-bar">
+        <div class="container top-bar-content">
+            <span><i class="fa-solid fa-location-dot"></i> ප්‍රා.ලේ. කාර්යාලය ඉදිරිපිට, වැලිගෙපොළ</span>
+            <div class="top-phones">
+                <a href="tel:0760419130"><i class="fa-solid fa-phone"></i> 076 041 9130</a>
+                <span>|</span>
+                <a href="tel:0704966651"><i class="fa-solid fa-phone"></i> 070 496 6651</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation Header -->
+    <header class="navbar">
+        <div class="container nav-container">
+            <a href="#" class="brand">
+                <div class="logo-badge">D<i class="fa-solid fa-bolt"></i></div>
+                <div class="brand-text">
+                    <h1>Danidu <span>Official</span></h1>
+                    <p>Your Trusted Tech & Digital Partner</p>
+                </div>
+            </a>
+
+            <nav class="nav-links">
+                <a href="#home">මුල් පිටුව</a>
+                <a href="#catalog">භාණ්ඩ සහ සේවා</a>
+                <a href="#reloads">රීලෝඩ් & ඩේටා</a>
+                <a href="#contact">සම්බන්ධ වන්න</a>
+            </nav>
+
+            <button class="cart-btn" id="openCartBtn">
+                <i class="fa-solid fa-basket-shopping"></i>
+                <span>ලැයිස්තුව</span>
+                <span class="cart-count" id="cartCount">0</span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container hero-grid">
+            <div class="hero-content">
+                <span class="hero-tag">වැලිගෙපොළ විශ්වසනීයම ඩිජිටල් සහ ලිපිද්‍රව්‍ය මධ්‍යස්ථානය</span>
+                <h2>ඔබගේ සියලුම <span>තාක්ෂණික, ඩිජිටල්</span> සහ <span>ලිපිද්‍රව්‍ය</span> අවශ්‍යතා එකම තැනකින්!</h2>
+                <p>CR පොත්, පෑන්, A4 කොළ, ෆෝන් කවර්, චාජින් කේබල් ඇතුළු සියලුම භාණ්ඩ මෙන්ම රීලෝඩ්, ටයිප් සෙටින්, ෆොටෝකොපි, ෆෝන් අන්ලොක් සහ වෙබ්/ඇප් නිර්මාණ සේවා කඩිනමින් සහ විශ්වාසනීයව ලබා ගන්න.</p>
+                <div class="hero-buttons">
+                    <a href="#catalog" class="btn btn-primary"><i class="fa-solid fa-grid-2"></i> භාණ්ඩ සහ සේවා බලන්න</a>
+                    <a href="https://wa.me/94760419130" target="_blank" class="btn btn-whatsapp"><i class="fa-brands fa-whatsapp"></i> WhatsApp පණිවිඩයක්</a>
+                </div>
+            </div>
+            <div class="hero-cards">
+                <div class="highlight-card">
+                    <i class="fa-solid fa-print"></i>
+                    <h3>ලේඛන සේවා</h3>
+                    <p>Photocopy, Printouts, Sinhala/English Typing, CV & TIN Registration</p>
+                </div>
+                <div class="highlight-card">
+                    <i class="fa-solid fa-mobile-screen-button"></i>
+                    <h3>Mobile & Tech</h3>
+                    <p>Phone Unlocking, Software Updates, Back Covers, Earphones & Cables</p>
+                </div>
+                <div class="highlight-card">
+                    <i class="fa-solid fa-book-open"></i>
+                    <h3>පාසල් සහ කාර්යාල උපකරණ</h3>
+                    <p>CR Books, Pens, Rulers, A4 Sheets, Envelopes & File Covers</p>
+                </div>
+                <div class="highlight-card">
+                    <i class="fa-solid fa-code"></i>
+                    <h3>Web & App Design</h3>
+                    <p>ව්‍යාපාර සඳහා වෙබ් අඩවි, Android Apps සහ Graphic Design</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products & Services Catalog -->
+    <section id="catalog" class="catalog-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>අපගේ <span>භාණ්ඩ</span> සහ <span>සේවාවන්</span></h2>
+                <p>ඔබට අවශ්‍ය භාණ්ඩ හෝ සේවාවන් තෝරා "ලැයිස්තුවට එක් කරන්න" ක්ලික් කර පහසුවෙන් ඇණවුම් කරන්න.</p>
+            </div>
+
+            <!-- Search & Category Filter Controls -->
+            <div class="controls-bar">
+                <div class="search-box">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input type="text" id="searchInput" placeholder="භාණ්ඩයක් හෝ සේවාවක් සොයන්න (උදා: CR Book, පෑන්, TIN, Back Cover)...">
+                </div>
+                <div class="filter-tabs" id="filterTabs">
+                    <button class="tab-btn active" data-category="all">සියල්ල (All)</button>
+                    <button class="tab-btn" data-category="stationery">ලිපිද්‍රව්‍ය (Stationery)</button>
+                    <button class="tab-btn" data-category="accessories">මොබයිල් උපාංග (Accessories)</button>
+                    <button class="tab-btn" data-category="services">ඩිජිටල් සහ තාක්ෂණික සේවා (Services)</button>
+                </div>
+            </div>
+
+            <!-- Dynamic Grid rendered via JS -->
+            <div class="items-grid" id="itemsGrid"></div>
+        </div>
+    </section>
+
+    <!-- Reloads & Data Packages Banner -->
+    <section id="reloads" class="reload-section">
+        <div class="container reload-box">
+            <div class="reload-info">
+                <h2><i class="fa-solid fa-tower-broadcast"></i> රීලෝඩ්, ඩේටා පැකේජ් සහ බිල්පත් ගෙවීම්</h2>
+                <p>ඕනෑම දුරකථන ජාලයකට ක්ෂණික රීලෝඩ්, 4G ඩේටා පැකේජ්, විදුලි/ජල බිල්පත් සහ රූපවාහිනී (Dialog TV / PeoTV) බිල්පත් ගෙවීමේ පහසුකම්.</p>
+                <div class="network-badges">
+                    <span class="net-badge dialog">Dialog</span>
+                    <span class="net-badge mobitel">SLTMobitel</span>
+                    <span class="net-badge hutch">Hutch</span>
+                    <span class="net-badge airtel">Airtel</span>
+                </div>
+            </div>
+            <div class="reload-action">
+                <a href="https://wa.me/94760419130?text=ආයුබෝවන් Danidu Official, මට Reload / Data Package එකක් ලබා ගැනීමට අවශ්‍යයි." target="_blank" class="btn btn-primary">
+                    <i class="fa-solid fa-bolt"></i> දැන්ම රීලෝඩ් කරගන්න
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact & Location Section -->
+    <footer id="contact" class="footer">
+        <div class="container footer-grid">
+            <div class="footer-about">
+                <h3>Danidu <span>Official</span></h3>
+                <p>Your Trusted Tech & Digital Partner. උසස් තත්වයේ ලිපිද්‍රව්‍ය, ජංගම දුරකථන උපාංග සහ කඩිනම් ඩිජිටල් සේවාවන් සඳහා අදම අප වෙත පිවිසෙන්න.</p>
+            </div>
+            <div class="footer-contact">
+                <h4>සම්බන්ධ කරගන්න (Contact Us)</h4>
+                <ul>
+                    <li><i class="fa-solid fa-location-dot"></i> ප්‍රාදේශීය ලේකම් කාර්යාලය ඉදිරිපිට, වැලිගෙපොළ</li>
+                    <li><i class="fa-solid fa-phone"></i> 076 041 9130 / 070 496 6651</li>
+                    <li><i class="fa-solid fa-clock"></i> සඳුදා - සෙනසුරාදා: පෙ.ව. 8.00 - ප.ව. 5.00</li>
+                </ul>
+            </div>
+            <div class="footer-form">
+                <h4>කෙටි පණිවිඩයක් යොමු කරන්න</h4>
+                <form id="quickContactForm">
+                    <input type="text" id="custName" placeholder="ඔබේ නම" required>
+                    <input type="tel" id="custPhone" placeholder="දුරකථන අංකය" required>
+                    <textarea id="custMsg" rows="2" placeholder="ඔබට අවශ්‍ය සේවාව හෝ භාණ්ඩය..." required></textarea>
+                    <button type="submit" class="btn btn-primary w-100">පණිවිඩය යවන්න</button>
+                </form>
+                <p id="formStatus" class="status-msg"></p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Danidu Official - Weligepola. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Inquiry / Order List Drawer Modal -->
+    <div class="cart-modal" id="cartModal">
+        <div class="cart-panel">
+            <div class="cart-header">
+                <h3><i class="fa-solid fa-list-check"></i> තෝරාගත් භාණ්ඩ / සේවා</h3>
+                <button class="close-btn" id="closeCartBtn"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            <div class="cart-body" id="cartItemsList">
+                <p class="empty-msg">තවමත් කිසිවක් තෝරාගෙන නොමැත.</p>
+            </div>
+            <div class="cart-footer">
+                <input type="text" id="orderCustomerName" placeholder="ඔබේ නම ඇතුළත් කරන්න (Optional)">
+                <button class="btn btn-whatsapp w-100" id="sendWhatsappOrder">
+                    <i class="fa-brands fa-whatsapp"></i> WhatsApp හරහා ඇණවුම් කරන්න
+                </button>
+                <button class="btn btn-outline w-100" id="clearCartBtn">ලැයිස්තුව හිස් කරන්න</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Flask සහ Live Server දෙකටම වැඩ කරන පරිදි JS සම්බන්ධ කර ඇත -->
+    <script src="{{ url_for('static', filename='script.js') }}" onerror="this.onerror=null;this.src='../static/script.js';"></script>
+</body>
+</html>
