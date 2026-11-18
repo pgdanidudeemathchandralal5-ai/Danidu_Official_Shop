@@ -734,3 +734,46 @@ body {
         font-size: 1.8rem;
     }
 }
+
+/* බටන් එක එබූ විට කොළ පාට වීම සහ Toast පණිවිඩය */
+.add-btn.added {
+    background-color: var(--whatsapp) !important;
+    color: var(--navy-dark) !important;
+}
+
+.toast-notification {
+    position: fixed;
+    bottom: 25px;
+    left: 50%;
+    transform: translateX(-50%) translateY(100px);
+    background-color: var(--navy-card);
+    color: var(--white);
+    border: 2px solid var(--gold-yellow);
+    padding: 12px 20px;
+    border-radius: 50px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.9rem;
+    z-index: 300;
+    opacity: 0;
+    cursor: pointer;
+    transition: all 0.35s ease;
+    white-space: nowrap;
+}
+
+.toast-notification.show {
+    transform: translateX(-50%) translateY(0);
+    opacity: 1;
+}
+
+.toast-notification i {
+    color: var(--whatsapp);
+    font-size: 1.1rem;
+}
+
+.toast-notification u {
+    color: var(--gold-yellow);
+    font-weight: 700;
+}
